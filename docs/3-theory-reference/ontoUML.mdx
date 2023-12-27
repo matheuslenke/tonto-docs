@@ -1,0 +1,79 @@
+---
+id: theory-ontouml
+description: OntoUML
+sidebar_position: 2
+---
+
+# OntoUML
+
+:::tip
+
+This is just a quick reference guide and should not be taken as a source of truth about OntoUML specification.
+
+:::
+
+Based on UFO, a class diagram profile was created for UML, introducing various stereotypes for classes that correspond to the concepts defined in UFO. Over time, it was dubbed 'OntoUML'. It's focus is on domain models, which consequently places more emphasis on endurants (objects, from UFO-A) than perdurants (events, processes, from UFO-B), as the foundation of the ontology. We can understand more about each category on the work proposed by Giancarlo Guizzardi and further improvements of the theory. Due to the fact of OntoUML being a work that had many contributions in the past almost two decades, some elements changed from the first specification until this present taxonomy.
+
+In OntoUML, selected classes in UFO and the relations between them are represented by stereotypes of classes or associations in UML, with syntactic formal constraints that are semantically motivated. "This combination of stereotypes and constraints enforces conformance, making every valid OntoUML model compliant to UFO"
+
+UFO divides all elements into some ontological categories, the first division being between types and individuals. A type for example would be the kind *Computer Operating System*, while an individual would be the available operating systems that we have, like Linux, Windows and MacOS. The relation between an individual and a type is called  *instantiation*, meaning that while types determine the characteristics that something needs to have in order to be considered of that type, an individual is the thing that exhibits these characteristics. OntoUML, being a profile of UML class diagrams, only supports the definition of types, meaning that it does not address the specification of individuals.
+
+Types are further categorized into endurant and perdurant types. Endurant types are classified into two orthogonal hierarchies: they are partitioned into substantial types or moment types in one of these hierarchies, and partitioned into sortals and non-sortals in the other. Substantials are independent entities that exist without the need of another, while moments are endurants that existentially depend on other entities. "A sortal is either a kind or a specialization of a kind, and those who are not a kind need to specialize exactly one kind". A non-sortal is a type that represents common properties of individuals of multiple kinds.
+
+Note that there are in fact two orthogonal *Endurant Type* taxonomies in UFO: (i) one whose types reflect UFO's taxonomy of individuals such as *Substantial Type*, *Moment Type*, *Object Type*, *Relator Type*, etc.; and (ii) one structured in terms of the *sortality*, *rigidity* and *external dependence* of types, ultimately leading to the notions of *Kind*, *Subkind*, *Phase*, *Role*, *Category*, *Phase Mixin*, *Role Mixin* and *Mixin*. The existence of two orthogonal hierarchies means that combinations are possible: a domain type such as *Person* can instantiate *Object Type* and *Kind* simultaneously. This means that the distinctions that were applied originally to types of substantials are also applicable for moment types.
+
+## Sortals
+
+The following sections focus on presenting every stereotype of OntoUML, starting with those representing sortals. A fundamental sort of endurant type is  *Kind*, a type which provides uniform principles of individuation, identity, and persistence to its instances. For example, the types person, dog, computer, car, organization and marriage are typically considered to be kinds. Kinds apply to instantiating individuals in all possible situations in which these individuals exist. In OntoUML, the stereotype <Stereotype>kind</Stereotype> is a shortcut for  *Object Kind*, i.e., an  *Object Type* that is also a  *Kind*. Because of this, instances of classes stereotyped <Stereotype>kind</Stereotype> are instances of  *Object* (also termed `functional complex' in UFO). Since the notion of ultimate sortals (kinds) is also applicable to  *Collective Types*,  *Quantity Types*,  *Quality Types*,  *Mode Types* and  *Relator Types*, specific stereotypes are introduced: a class stereotyped *kind* is an  *Object Kind*, a class stereotyped *collective* is a  *Collective Kind*, a class stereotyped *relator* is a  *Relator Kind*, a class stereotyped *mode* is a  *Mode Kind*, a class stereotyped *quality* is a  *Quality Kind*, and a class stereotyped *quantity* is a  *Quantity Kind*.
+
+The meaning of each of these stereotypes (representing kinds of endurants) is as follows:
+
+### Ultimate Sortals
+- **<Stereotype>collective</Stereotype>**: An instance of a class stereotyped <Stereotype>collective</Stereotype> is a collective entity whose parts (members of the collective) fulfill identical roles in relation to the whole, for example, a deck of cards or a forest as a collective of trees.
+
+- **<Stereotype>quantity</Stereotype>**: An instance of a class stereotyped  <Stereotype>quantity</Stereotype> is a portion of homeomerous amount of matter. For example, a portion of water, soda or sand.
+
+- **<Stereotype>quality</Stereotype>**: An instance of a class stereotyped <Stereotype>quality</Stereotype>  is a particularized  property that can be understood as a value in a conceptual space, for example, the weight or height of a person which can be measured in centimeters, or the color of an eye that can be represented in an RGB tuple.
+
+- **<Stereotype>mode</Stereotype>**: An instance of a class stereotyped <Stereotype>mode</Stereotype> is a particularized property that is not conceived as a value in a conceptual space. For example, the ability of speaking a language that a person can have, or a disease that is affecting a dog.
+
+- **<Stereotype>relator</Stereotype>**: An instance of a class stereotyped <Stereotype>relator</Stereotype> is a truth-makers of a material relation, an entity that needs to exist for two or more related individuals to be connected through a material relation. For example, a handshake depends on two individuals of the kind element *Person*. Examples or relators include social objects such as *Marriage*, or a purchase order from an online store.
+
+### Base sortals
+
+The additional sortal stereotypes <Stereotype>subkind</Stereotype>, <Stereotype>phase</Stereotype> and <Stereotype>role</Stereotype> represent their counterparts in UFO. They must specialize a unique *kind* from which they inherit a principle of identity for their instances. Whether their instances are objects, collectives, quantities, qualities, modes or relators is already settled by specialized class (which will be stereotyped <Stereotype>kind</Stereotype>, <Stereotype>collective</Stereotype>, <Stereotype>quantity</Stereotype>, <Stereotype>quality</Stereotype>, <Stereotype>mode</Stereotype> or <Stereotype>relator</Stereotype>. These additional sortal stereotypes have the following semantics:
+
+- **<Stereotype>subkind</Stereotype>**: Subkinds are rigid specializations of a kind. For example, we can have *Man* as a subkind of *Person*.
+
+- **<Stereotype>phase</Stereotype>**: Phases are "sortals whose contingent classification conditions are intrinsic". They represent changes in intrinsic properties of instances of a kind, for example, in the case of the age of instances of the *kind* person, we can have phases such as  *Child*, *Teenager* and *Adult*.
+
+- **<Stereotype>role</Stereotype>**: Roles are "sortals whose contingent classification conditions are relational" . They are anti-rigid specializations of kinds, for example, the role *student* of the kind *person*.
+
+## Non-Sortals
+
+As opposed to sortals, "non-sortals are types that represent common properties of individuals of multiple Kinds". The non-sortals are *categories*, *phase-mixins*, *role mixins* and *mixins*.
+
+- **<Stereotype>category</Stereotype>**: Categories are "rigid types that define essential properties for their instances, e.g., the category ‘physical object’ describing the properties of having a mass and a spatial extension, common to things of the kinds car, person, bridge, cow, etc.;". Or, for example, we can have the category *Furniture*, which describes properties of things that are usually used in a house by humans for many purposes.
+
+- **<Stereotype>phaseMixin</Stereotype>**: Phase mixins are "anti-rigid types that define contingent properties for their instances. Their instantiation is characterized by intrinsic contingent conditions. For example, the phase mixin `living animal' may apply to instances of the kinds person, dog, and horse"
+
+- **<Stereotype>roleMixin</Stereotype>**: Role mixins are "anti-rigid types that define contingent properties for their instances", aggregating instances with different identity principles. For instance, the role mixin *customer* can be specialized by the role *personal customer* of the kind *person*, or by the role *corporate customer* of the kind *company*.
+
+- **<Stereotype>mixin</Stereotype>**:  Mixins are "semi-rigid types that define properties that are essential to some of their instances but accidental to some other instances (e.g., being a ‘music artist’ is essential to bands but accidental to people)."
+
+## Example of OntoUML Model
+
+The following figure illustrates an OntoUML example model of a University, showcasing some details of a Person with attributes, various life phases, and the roles encompassing a Person's involvement as a University Student and a University Professor. The model encapsulates essential elements found within a university setting, including classrooms, staff, and departments. Additionally, it incorporates two relators that establish the contractual relationship between students and professors within the university.
+
+![OntoUML University model](/img/diagrams/fig-diagrams-university-model.png)
+
+## Ontological Natures
+
+As part of OntoUML's evolution, OntoUML 2.0 was proposed changing some existing elements of UFO and introducing a new concept called *ontological natures*. When we look at an ultimate sortal stereotype, i.e. <Stereotype>kind</Stereotype>, <Stereotype>collective</Stereotype>, <Stereotype>quantity</Stereotype>, <Stereotype>quality</Stereotype>, <Stereotype>mode</Stereotype>, and <Stereotype>relator</Stereotype> stereotypes, based on the stereotype kind, one can already determine the nature of the instances of this element. For instance, a class with the stereotype <Stereotype>relator</Stereotype> would have the nature of relators. Also, other sortals, i.e. <Stereotype>subkind</Stereotype>, <Stereotype>role</Stereotype>, <Stereotype>historicalRole</Stereotype> and <Stereotype>phase</Stereotype> need to specialize a unique kind to provide their nature. The same is not valid for non-sortals, i.e. <Stereotype>category</Stereotype>, <Stereotype>mixin</Stereotype>, <Stereotype>phaseMixin</Stereotype>, <Stereotype>roleMixin</Stereotype>, and <Stereotype>historicalRoleMixin</Stereotype> stereotypes. At first, an abstract category like *Social Entity* would be able to be specialized by kinds (functional complex) or relator kinds without the need to specify anything. In order to improve the specification of non-sortals, the functionality to define the ontological nature of these elements was added, defining that instances of that category would have to follow this specific nature. In that way, for example, a category could have its instances restricted only to relator kinds by specifying its nature to relators. This was added to OntoUML using the *restrictedTo* UML "tagged value" that can be assigned to a non-sortal to establish the possible natures of their instances.
+
+export const Stereotype = ({children}) => (
+  <i
+  >
+  ≪{children}≫
+  </i>
+);

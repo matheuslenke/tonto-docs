@@ -7,7 +7,7 @@ sidebar_position: 1
 
 ![Tonto Logo](/img/tonto-full-logo.png)
 
-The original paper that presented Tonto can be found [here.](https://ufesbr-my.sharepoint.com/personal/cienciadacomputacao_ufes_br/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcienciadacomputacao%5Fufes%5Fbr%2FDocuments%2FTCCs%2F2023%2FMatheus%20Lenke%20Coutinho%20%2D%20Tonto%20A%20Textual%20Language%20for%20Ontology%2DDriven%20Conceptual%20Modeling%2Epdf&parent=%2Fpersonal%2Fcienciadacomputacao%5Fufes%5Fbr%2FDocuments%2FTCCs%2F2023)
+The original paper that presented Tonto can be found [here.](https://ufesbr-my.sharepoint.com/personal/cienciadacomputacao_ufes_br/_layouts/15/onedrive.aspx?ga=1&id=%2Fpersonal%2Fcienciadacomputacao%5Fufes%5Fbr%2FDocuments%2FTCCs%2F2023%2FMatheus%20Lenke%20Coutinho%20%2D%20Tonto%20A%20Textual%20Language%20for%20Ontology%2DDriven%20Conceptual%20Modeling%2Epdf&parent=%2Fpersonal%2Fcienciadacomputacao%5Fufes%5Fbr%2FDocuments%2FTCCs%2F2023) and the source code of Tonto can be found on its [GitHub repository](https://github.com/matheuslenke/Tonto)
 
 Tonto is an acronym with the words Textual and Ontology, because it is a written way of writing Ontology models. It was developed using the Langium tool, with Typescript, and creates a Visual Studio Code Extension with a Language server.
 

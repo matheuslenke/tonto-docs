@@ -1,0 +1,39 @@
+---
+id: theory-beyond-endurant-types
+description: OntoUML
+sidebar_position: 3
+---
+
+# Beyond Endurant Types
+
+:::tip
+
+This is just a quick reference guide and should not be taken as a source of truth about OntoUML specification.
+
+:::
+
+
+After the development of the core concepts of UFO-A in OntoUML, UFO-B elements were presented to include perdurants, expanding the theory. They are presented in UFO as opposed to *Endurant* types and individuals. Two stereotypes were included, <Stereotype>events</Stereotype> and <Stereotype>situations</Stereotype>. Events are individuals composed of temporal parts and happen in time, meaning that they are a set of temporal parts accumulated . Some examples are a party, a basketball game, or a music festival. They can be composed of other events, for example, the fall of the Roman Empire is composed of many events like Rome being attacked by barbarians and weather problems that disrupted harvests, deepening the crisis. An event composed of other events is a Complex Event, while an event without any smaller part is an Atomic event. They are ontologically dependent entities in the sense that they existentially depend on objects in order to exist. 
+
+Another important detail is that "...by introducing events in the model, our universe of discourse contains not only the entities that exist in a given circumstance but also all entities that have existed in that history of our universe of discourse up to that point". That means that historical semantics were included in models because we are only taking into account events that occurred in the past. For example, in the diagram above we can see two different ways to represent a person being a soccer player. One of them considers the event of the soccer match, therefore, the role played by this person is a historical role, that happened at the same temporal part of that match. The other option is representing the contract established between a player and a soccer club, meaning that this person is a soccer player because of this ongoing relationship instead of only one event. The participation stereotype of this relation represents the player participating in the soccer match. Also, another important detail is that events are immutable, in contrast to relators, which can change their properties while remaining the same.
+
+![Diagram describing a soccer match with roles of a person](/img/diagrams/fig-diagrams-soccer-match.png)
+Diagram describing a soccer match with roles of a person.
+
+On the other hand, situations are inherently tied to specific points in time. Therefore, two qualitatively identical situations occurring at different time points are regarded as distinct in numerical terms. For example, the situation of "Mary having long hair today" and the situation of "Mary having long hair some moment in the past" are considered separate instances.
+
+## High order types as Endurants
+
+Until recently, OntoUML reflected UFO's foundation which defines that domain entities are divided in types and instances. However, not all entities conform to that definition, and accumulate at the same time instance-like and type-like characteristics. One example is from the context of software development, where we could define types of tasks that need to be executed during software development, and also classify the types of types of tasks. Therefore, in order to conceptualize the software development domain, we require representing entities in different classification levels, in this case, tasks, types of tasks, and types of types of tasks. This differentiates from the classic two-level division between classes and instances, and allows classes that are instances of other classes. This is presented in the Multi-level Theory (MLT). Based on this theory, high-order types were incorporated in UFO and OntoUML.
+
+To incorporate high-order types, the notion of instantiation (iof) provided by MLT is integrated in UFO, "where iof is a primitive relation that holds between an instance *e*  and a type *t*  in a world *w*  where *t*  classifies *e*". In order to enable the declaration of high-order kinds, the stereotype <Stereotype>type</Stereotype> was introduced in OntoUML. The <Stereotype>instantiation</Stereotype> is "used to provide specialized semantics to an association between a high-order type and a base type". Also, new tagged values were included. *restrictedTo*  now includes *type* , in order to account for the type's ontological nature. *isPowertype*  is used to determine if "it is a Cardelli powertype of the base type" or if it is an Odell powertype, i.e.,  "a categorizer of the base type". Lastly, an *order*  tagged value was included to allow defining the order of the declared type. The diagram below shows an example of type definition in a model about Ships. The type *Ship Type* is a *powertype* of order 2, and is associated with the kind *Ship*  with an instantiation relation.
+
+![Diagram describing a Ship Type](/img/diagrams/fig-diagrams-ship.png)
+Diagram describing a Ship Type
+
+export const Stereotype = ({children}) => (
+  <i
+  >
+  ≪{children}≫
+  </i>
+);
