@@ -1,6 +1,6 @@
 ---
 id: tonto-package-manager
-description: Test
+description: Share your projects as libs with Tonto Package Manager
 sidebar_position: 7
 ---
 

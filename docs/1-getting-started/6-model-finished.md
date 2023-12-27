@@ -1,6 +1,6 @@
 ---
 id: tonto-finishing-model
-description: Test
+description: Finishing the University model
 sidebar_position: 6
 ---
 
@@ -133,10 +133,10 @@ relator EmploymentContract {
 }
 
 relator Enrollment {
-    @mediation
-    [0..*] -- [1] University
+  @mediation
+  [0..*] -- [1] University
 
-    @mediation
-    [1..*] -- [1] UniversityStudent
+  @mediation
+  [1..*] -- [1] UniversityStudent
 }
 ```

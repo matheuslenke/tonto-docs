@@ -1,6 +1,6 @@
 ---
 id: vscode-validators
-description: Test
+description: Tonto validators that helps you ensure your models are correct
 sidebar_position: 1
 ---
 

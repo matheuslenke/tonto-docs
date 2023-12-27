@@ -1,6 +1,6 @@
 ---
 id: tonto-relations
-description: Test
+description: Creating relations between elements
 sidebar_position: 4
 ---
 

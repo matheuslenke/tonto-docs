@@ -1,6 +1,6 @@
 ---
 id: vscode-features
-description: Test
+description: An introduction to Tonto VS Code extension features
 sidebar_position: 1
 ---
 
