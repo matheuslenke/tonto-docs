@@ -23,6 +23,10 @@ The language supports:
 
 <!-- Constraints specification when extra precision is required -->
 
-* Ontology testing/verification directives
+* Modularization of Models in multiple repositories
+
+* Transformation to OWL-based implementation OntoUML tools
 
 As a textual syntax, the language can benefit from source control tools such as git, and ontologies can be viewed and edited without special tools. This VS Code extension is provided with support for syntax verification, syntax highlight, content assist and ontology visualization preview. The extension is integrated with the OntoUML server, to benefit from services designed for the language, such as transformation to OWL and generation of database schemas.
+
+![Tonto Example](/gif/1.gif)

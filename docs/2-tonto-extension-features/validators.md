@@ -8,6 +8,8 @@ sidebar_position: 1
 
 In this section, we will describe each validator implemented on Tonto LSP. Every validator runs in the context of a package automatically when there are changes in code. All validators were inspired by the ones developed at ontouml-js, with some changes due to differences between Tonto and JSON syntaxes.
 
+![Tonto validation Example](/gif/validation.gif)
+
 ## Ultimate Sortal specialization validator
 
 This validator checks whether the class declaration is an Ultimate Sortal and whether it specializes other Ultimate sortals. Because ultimate sortals should not do this specialization, this shows an error as presented in the next figure.
