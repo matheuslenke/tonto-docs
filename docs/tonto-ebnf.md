@@ -5,7 +5,7 @@ sidebar_position: 7
 
 # Tonto EBNF Declaration
 
-In this page, we delineate the Extended Backus-Naur Form (EBNF) declaration pertinent to Tonto.
+In this page, we delineate the Extended Backus-Naur Form (EBNF) declaration pertinent to Tonto. The PDF version can be found [here.](https://matheuslenke.github.io/tonto-docs/pdf/Tonto-EBNF.pdf) 
 
 ```bnf
 grammar Tonto
